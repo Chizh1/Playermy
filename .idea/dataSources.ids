@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="persistenceUnit" uuid="49fb2d7b-bf59-4a88-ad8c-6079504a33e7">
+    <database-info product="MySQL" version="5.6.21-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.33 ( Revision: alexander.soklakov@oracle.com-20140908134200-8ukofe1izi0r2b63 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="player"/>
+    <table name="files" schema="" catalog="player" type="TABLE">
+      <column name="IDFILES" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="TITLE" sqlType="VARCHAR" precision="75" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PATH" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USERSFK" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="FILETYPEFK" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="SETFK" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="IDFILES"/>
+      <foreign-key name="FK_FILES_FILETYPES" columns="FILETYPEFK" ref-table="filetypes" ref-schema="" ref-catalog="player" ref-columns="IDFILETYPES" update-rule="0" delete-rule="2" deferrability="2"/>
+      <foreign-key name="FK_FILES_SETTINGS" columns="SETFK" ref-table="settings" ref-schema="" ref-catalog="player" ref-columns="IDSETTINGS" update-rule="0" delete-rule="2" deferrability="2"/>
+      <foreign-key name="FK_FILES_USERS" columns="USERSFK" ref-table="users" ref-schema="" ref-catalog="player" ref-columns="IDUSER" update-rule="0" delete-rule="2" deferrability="2"/>
+      <exported-key name="FK_file_from_files" table="users_files" schema="" catalog="player" columns="idFiles_from_files"/>
+      <index name="IDFILES_UNIQUE" unique="true" columns="IDFILES"/>
+      <index name="FK_FILES_FILETYPES" unique="false" columns="FILETYPEFK"/>
+      <index name="FK_FILES_SETTINGS" unique="false" columns="SETFK"/>
+      <index name="FK_FILES_USERS" unique="false" columns="USERSFK"/>
+    </table>
+    <table name="filetypes" schema="" catalog="player" type="TABLE">
+      <column name="IDFILETYPES" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="EXTENSIONS" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPES" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="IDFILETYPES"/>
+      <exported-key name="FK_FILES_FILETYPES" table="files" schema="" catalog="player" columns="FILETYPEFK"/>
+      <index name="IDFILETYPES_UNIQUE" unique="true" columns="IDFILETYPES"/>
+      <index name="UNQ_FILETYPES" unique="true" columns="EXTENSIONS"/>
+    </table>
+    <table name="settings" schema="" catalog="player" type="TABLE">
+      <column name="IDSETTINGS" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ACTIONS" sqlType="VARCHAR" precision="17" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="IDSETTINGS"/>
+      <exported-key name="FK_FILES_SETTINGS" table="files" schema="" catalog="player" columns="SETFK"/>
+      <index name="IDSETTINGS_UNIQUE" unique="true" columns="IDSETTINGS"/>
+      <index name="UNQ_SETTINGS_ACTIONS" unique="true" columns="ACTIONS"/>
+    </table>
+    <table name="users" schema="" catalog="player" type="TABLE">
+      <column name="IDUSER" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="LOGIN" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASS" sqlType="VARCHAR" precision="8" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="IDUSER"/>
+      <exported-key name="FK_FILES_USERS" table="files" schema="" catalog="player" columns="USERSFK"/>
+      <exported-key name="FK_users_from_users" table="users_files" schema="" catalog="player" columns="idUsers_from_users"/>
+      <index name="IDUSER_UNIQUE" unique="true" columns="IDUSER"/>
+      <index name="LOGIN" unique="true" columns="LOGIN"/>
+    </table>
+    <table name="users_files" schema="" catalog="player" type="TABLE">
+      <column name="idUsers_from_users" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idFiles_from_files" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idusers_files" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="idusers_files"/>
+      <foreign-key name="FK_file_from_files" columns="idFiles_from_files" ref-table="files" ref-schema="" ref-catalog="player" ref-columns="IDFILES" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_users_from_users" columns="idUsers_from_users" ref-table="users" ref-schema="" ref-catalog="player" ref-columns="IDUSER" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_file_from_files_idx" unique="false" columns="idFiles_from_files"/>
+      <index name="FK_users_from_users_idx" unique="false" columns="idUsers_from_users"/>
+    </table>
+  </data-source>
+</component>

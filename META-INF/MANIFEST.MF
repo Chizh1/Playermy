@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Class-Path: jdom-1.0.jar plexus-component-annotations-1.5.5.jar javax.
+ persistence.jar maven-monitor-2.0.9.jar maven-artifact-2.0.9.jar mave
+ n-shared-incremental-1.1.jar maven-core-2.0.9.jar commons-logging-1.0
+ .4.jar maven-error-diagnostics-2.0.9.jar maven-shared-utils-0.1.jar j
+ -ogg-all-1.0.0.jar maven-project-2.0.9.jar maven-plugin-api-2.0.9.jar
+ plexus-compiler-manager-2.2.jar maven-plugin-parameter-documenter-2.0
+ .9.jar commons-httpclient-2.0.2.jar plexus-container-default-1.5.5.ja
+ r FFmpeg-windows-x86-2.0.1.1.jar wagon-provider-api-1.0-beta-2.jar ma
+ ven-settings-2.0.9.jar maven-model-2.0.9.jar platform-3.5.2.jar vorbi
+ s-java-core-0.6.jar jsr305-2.0.1.jar maven-toolchain-1.0.jar plexus-u
+ tils-1.5.1.jar maven-profile-2.0.9.jar log4j-1.2.12.jar xbean-reflect
+ -3.4.jar jna-platform-4.1.0.jar plexus-classworlds-2.2.2.jar mp3plugi
+ n.jar commons-logging-api-1.1.jar maven-repository-metadata-2.0.9.jar
+  plexus-compiler-javac-2.2.jar maven-plugin-descriptor-2.0.9.jar slid
+ e-webdavlib-2.1.jar mysql-connector-java-5.1.33.jar maven-artifact-ma
+ nager-2.0.9.jar wagon-webdav-1.0-beta-2.jar plexus-compiler-api-2.2.j
+ ar javaee.jar junit-3.8.1.jar vlcj-3.0.1.jar maven-compiler-plugin-3.
+ 1.jar mysql-connector-java-5.1.33-bin.jar javax.jar google-collection
+ s-1.0.jar xml-im-exporter-1.1.jar gstreamer-java-1.6.jar javax.persis
+ tence-2.1.0.jar maven-plugin-registry-2.0.9.jar jna-4.1.0.jar maven-r
+ esources-plugin-2.6.jar maven-source-plugin-2.3.jar maven-idea-plugin
+ -2.2.1.jar
+Main-Class: MainWindow
+

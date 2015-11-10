@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="entity.FilesEntity">
+        <table name="files" schema="" catalog="player"/>
+        <attributes>
+            <id name="idfiles">
+                <column name="IDFILES" nullable="false" precision="10"/>
+            </id>
+            <basic name="title">
+                <column name="TITLE" length="75"/>
+            </basic>
+            <basic name="path">
+                <column name="PATH" length="200"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="entity.FiletypesEntity">
+        <table name="filetypes" schema="" catalog="player"/>
+        <attributes>
+            <id name="idfiletypes">
+                <column name="IDFILETYPES" nullable="false" precision="10"/>
+            </id>
+            <basic name="extensions">
+                <column name="EXTENSIONS" length="15"/>
+            </basic>
+            <basic name="types">
+                <column name="TYPES" length="15"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="entity.SettingsEntity">
+        <table name="settings" schema="" catalog="player"/>
+        <attributes>
+            <id name="idsettings">
+                <column name="IDSETTINGS" nullable="false" precision="10"/>
+            </id>
+            <basic name="actions">
+                <column name="ACTIONS" length="17"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="entity.UsersEntity">
+        <table name="users" schema="" catalog="player"/>
+        <attributes>
+            <id name="iduser">
+                <column name="IDUSER" nullable="false" precision="10"/>
+            </id>
+            <basic name="login">
+                <column name="LOGIN" length="10"/>
+            </basic>
+            <basic name="pass">
+                <column name="PASS" length="8"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="entity.UsersFilesEntity">
+        <table name="users_files" schema="" catalog="player"/>
+        <attributes>
+            <id name="idusersFiles">
+                <column name="idusers_files" nullable="false" precision="10"/>
+            </id>
+            <many-to-one name="filesByIdFilesFromFiles" optional="true" target-entity="entity.FilesEntity">
+                <join-column name="idFiles_from_files" referenced-column-name="IDFILES"/>
+            </many-to-one>
+            <many-to-one name="usersByIdUsersFromUsers" optional="true" target-entity="entity.UsersEntity">
+                <join-column name="idUsers_from_users" referenced-column-name="IDUSER"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

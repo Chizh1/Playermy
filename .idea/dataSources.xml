@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1942622246">
+    <data-source source="LOCAL" name="persistenceUnit" uuid="49fb2d7b-bf59-4a88-ad8c-6079504a33e7">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/Player</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/lib/mysql-connector-java-5.1.33.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>

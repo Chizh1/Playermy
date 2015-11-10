@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.hoary.ffmpeg:FFmpeg-windows-x86:2.0.1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../.m2/repository/com/github/hoary/ffmpeg/FFmpeg-windows-x86/2.0.1.1/FFmpeg-windows-x86-2.0.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../.m2/repository/com/github/hoary/ffmpeg/FFmpeg-windows-x86/2.0.1.1/FFmpeg-windows-x86-2.0.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../.m2/repository/com/github/hoary/ffmpeg/FFmpeg-windows-x86/2.0.1.1/FFmpeg-windows-x86-2.0.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
